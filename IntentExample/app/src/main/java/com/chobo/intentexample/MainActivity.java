@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_move;
     private EditText et_test;
     private String str;
+    private ImageView test;
 
 
     @Override
@@ -23,10 +26,15 @@ public class MainActivity extends AppCompatActivity {
         btn_move = findViewById(R.id.btn_move);
         et_test = findViewById(R.id.et_test);
 
+        test = (ImageView) findViewById(R.id.test);
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"jher 팝업 테스트",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btn_move.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
                 str = et_test.getText().toString();
